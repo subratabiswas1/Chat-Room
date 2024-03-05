@@ -1,0 +1,57 @@
+/* Custom CSS for styling */
+body {
+  background: slategrey;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#chat {
+  display: none;
+}
+
+li {
+  display: block;
+}
+
+.user-message {
+  background-color: #127835;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 5px 10px;
+  margin: 5px 0;
+  float: right;
+}
+
+.other-message {
+  background-color: #49535d;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 5px 10px;
+  margin: 5px 0;
+  float: left;
+}
+.join-message-user {
+  background-color: #359dde;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 5px 10px;
+  margin: 10px 0;
+  float: right;
+}
+.join-message-other {
+  background-color: #359dde;
+  color: #fff;
+  border-radius: 0.5em;
+  padding: 5px 10px;
+  margin: 10px 0;
+  float: left;
+}
