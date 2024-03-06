@@ -2,7 +2,7 @@ let $ = jQuery;
 let socket;
 
 function initializeWebSocket() {
-  socket = new WebSocket('ws://chat-room-3-nr79.onrender.com/message');
+  socket = new WebSocket('wss://chat-room-3-nr79.onrender.com/message');
 
   socket.onopen = function (event) {
     socket.send(JSON.stringify({"message": "Have joined!!","username": $('#usernameInput').val()}));
