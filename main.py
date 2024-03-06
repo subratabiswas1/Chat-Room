@@ -7,6 +7,7 @@ import uuid
 import json
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 templates = Jinja2Templates(directory="templates")
 
@@ -64,6 +65,15 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 connection_manager = ConnectionManager()
 
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins = ["*"],
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
+)
+
+
 @app.get("/", response_class=HTMLResponse)
 def get_room(request: Request):
   return templates.TemplateResponse("index.html", {"request": request})
@@ -82,7 +92,3 @@ async def websocket_endpoint(websocket: WebSocket):
     id = connection_manager.disconnect(websocket)
 
     return RedirectResponse("/")
-
-
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=10000)
